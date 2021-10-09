@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.10",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "kathys-bakery",
+  "description": "An Bakery Application that allows you to create an account and shop for bakery goods.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/tyrone-cartwright/Kathys-baKery.git"
+  },
+  "keywords": [
+    "bakery",
+    "pastry",
+    "pastry",
+    "chef",
+    "cupcake",
+    "cakes",
+    "muffins",
+    "bread",
+    "crossaints"
+  ],
+  "author": "Tyrone Cartwright",
+  "license": "ISC"
+}
