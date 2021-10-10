@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const expressSession = require('express-session');
+const { auth } = require('express-openid-connect');
+const usersControllers = require('./controllers/users');
 
 // Initialize app
 const app = express();
@@ -21,16 +23,31 @@ db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
 db.on('connected', () => console.log('mongo is connected'));
 db.on('disconnected', () => console.log('mongo is disconnected'));
 
+// Auth config
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER,
+};
+
 // Mount Middleware
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
-// app.use(
-//   expressSession({
-//     secret,
-//   })
-// );
+app.use(
+  expressSession({
+    secret: 'baKeryKat',
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
 
 // Mount Routes
+app.use('/', usersControllers);
 
 // App Listener
 const PORT = process.env.PORT;

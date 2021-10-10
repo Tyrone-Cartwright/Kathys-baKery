@@ -4,7 +4,9 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-openid-connect": "^2.5.1",
     "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
     "mongoose": "^6.0.10",
     "morgan": "^1.10.0"
   },
@@ -15,7 +17,6 @@
   "description": "An Bakery Application that allows you to create an account and shop for bakery goods.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://git.generalassemb.ly/tyrone-cartwright/Kathys-baKery.git"
