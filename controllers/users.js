@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { auth } = require('express-openid-connect');
 const User = require('../models/user');
-const { requiresAuth } = require('express-openid-connect');
+// const { requiresAuth } = require('express-openid-connect');
 
 // req.isAuthenticated is provided from the auth router
 router.get('/', (req, res) => {
@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/login', (req, res) => {
-  res.render('login', { error: '' });
-});
+// router.get('/login', (req, res) => {
+//   res.render('login', { error: '' });
+// });
 
 // User's profile protected route
 // router.get('/profile', requiresAuth(), (req, res) => {

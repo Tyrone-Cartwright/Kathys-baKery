@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const expressSession = require('express-session');
 const { auth } = require('express-openid-connect');
-const usersControllers = require('./controllers/users');
+// const usersControllers = require('./controllers/users');
+const menuControllers = require('./controllers/menu');
 
 // Initialize app
 const app = express();
@@ -43,11 +44,13 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(express.static('public'));
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
 // Mount Routes
-app.use('/', usersControllers);
+// app.use('/', usersControllers);
+app.use('/menu', menuControllers);
 
 // App Listener
 const PORT = process.env.PORT;
