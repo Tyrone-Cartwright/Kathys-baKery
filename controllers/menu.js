@@ -18,6 +18,10 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/new', (req, res) => {
+  res.render('new.ejs');
+});
+
 // router.get('/seed', (req, res) => {
 //   Menu.deleteMany({}, (err, menu) => {});
 
@@ -26,10 +30,35 @@ router.get('/', (req, res) => {
 //   });
 // });
 
+router.delete('/:id', (req, res) => {
+  Menu.findByIdAndRemove(req.params.id, (err, menu) => {
+    res.redirect('/');
+  });
+});
+
+router.put('/:id', (req, res) => {
+  Menu.findByIdAndUpdate(req.params.id, req.body, (err, menu) => {
+    res.render('/');
+  });
+});
+
 // Create page
 router.post('/', (req, res) => {
   Menu.create(req.body, (error, menu) => {
     res.render('index.ejs', { menu });
+  });
+});
+
+router.get('/:id/edit', (req, res) => {
+  Menu.findById(req.params.id, (err, menu) => {
+    res.render('edit.ejs', { menu });
+  });
+});
+
+// Show page
+router.get('/:id', (req, res) => {
+  Menu.findById(req.params.id, (error, menu) => {
+    res.render('menus/show.ejs', { menu });
   });
 });
 

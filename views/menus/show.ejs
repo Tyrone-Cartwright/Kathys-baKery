@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu-items">
+        <img src="<%= menu.img %> " />
+        <h3><%= menu.name %></h3>
+        <p><%= menu.description %></p>
+        <p>$<%= menu.price %></p>
+        <p><%= menu.qty %></p>
+        <p><%= menu.preparedBy %></p>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- name: { type: String, required: true },
+  description: { type: String, required: true },
+  image: String,
+  price: Number,
+  qty: Number,
+  preparedBy: String, -->
