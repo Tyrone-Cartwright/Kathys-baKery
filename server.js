@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const expressSession = require('express-session');
+const methodOverride = require('method-override');
 const { auth } = require('express-openid-connect');
 const usersControllers = require('./controllers/users');
 const menuControllers = require('./controllers/menu');
@@ -44,6 +45,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));

@@ -6,8 +6,56 @@
   <body>
     <h1>New Menu Item</h1>
     <div class="container">
-      <form action="/" method="POST">
-        <label></label>
+      <form action="/menu" method="POST">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          required
+        /><br />
+        <label for="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          placeholder="Description"
+          required
+        /><br />
+        <label for="image">Image</label>
+        <input
+          type="url"
+          name="image"
+          id="image"
+          placeholder="Image"
+          required
+        /><br />
+        <label for="price">Price</label>
+        <input
+          type="number"
+          name="price"
+          id="price"
+          placeholder="Price"
+          required
+        /><br />
+        <label for="qty">Quantity</label>
+        <input
+          type="number"
+          name="qty"
+          id="qty"
+          placeholder="Qty"
+          required
+        /><br />
+        <label for="preparedBy">Prepared By</label>
+        <input
+          type="text"
+          name="preparedBy"
+          id="preparedBy"
+          placeholder="Prepared By"
+          required
+        /><br />
+        <input type="submit" value="Add New Menu Item" />
       </form>
     </div>
   </body>

@@ -6,19 +6,15 @@
   <body>
     <div class="container">
       <div class="menu-items">
-        <img src="<%= menu.img %> " />
         <h3><%= menu.name %></h3>
         <p><%= menu.description %></p>
+        <img src="<%= menu.img %> " />
         <p>$<%= menu.price %></p>
         <p><%= menu.qty %></p>
         <p><%= menu.preparedBy %></p>
       </div>
     </div>
+    <a href="/menu/<%= menu._id %>/edit">Edit <%= menu.name %></a>
+    <a href="/menu">Menu</a>
   </body>
 </html>
-<!-- name: { type: String, required: true },
-  description: { type: String, required: true },
-  image: String,
-  price: Number,
-  qty: Number,
-  preparedBy: String, -->

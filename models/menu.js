@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const menuSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  image: String,
+  img: String,
   price: Number,
   qty: Number,
   preparedBy: String,

@@ -3,18 +3,27 @@
   <head>
     <%- include('./partials/head.ejs') %>
   </head>
-  <body>
-    <nav>
-      <ul>
-        <% if(!isAuthenticated) { %>
-        <li><a href="/login">Login</a></li>
-        <% } else { %>
-        <li><a href="/logout">Logout</a></li>
-        <% } %>
-      </ul>
-    </nav>
-    <h1><%=title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body class="index">
+    <header>
+      <div class="logo">
+        <img src="/assets/Kathy's baKery.jpg" />
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="/menu">Menu</a></li>
+          <% if(!isAuthenticated) { %>
+          <li><a href="/login">Login</a></li>
+          <% } else { %>
+          <li><a href="/logout">Logout</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+
     <div class="reflection"></div>
+    <div class="welcome">
+      <h1><%=title %></h1>
+      <p>Welcome to <%= title %></p>
+    </div>
   </body>
 </html>

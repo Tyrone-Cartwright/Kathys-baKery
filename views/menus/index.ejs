@@ -10,7 +10,7 @@
       </div>
       <nav class="nav-menu">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">Shop</a></li>
           <li><a href="#">Logout</a></li>
         </ul>
@@ -18,11 +18,17 @@
     </header>
     <main>
       <h2>Bakery Deliciousness</h2>
-      <div>
+      <div class="container">
         <% for(let i = 0; i < menu.length; i++) { %>
-
-        <a href="/menu/<%= menu[i]._id%>"><%= menu[i].name%></a>
-
+        <div class="menu-card">
+          <h3><%= menu[i].name %></h3>
+          <p><%= menu[i].description %></p>
+          <img src="<%= menu[i].img %> " />
+          <p>$<%= menu[i].price %></p>
+          <p><%= menu[i].qty %></p>
+          <p><%= menu[i].preparedBy %></p>
+          <a href="/menu/<%= menu[i]._id%>"><%= menu[i].name%></a>
+        </div>
         <% } %>
       </div>
     </main>

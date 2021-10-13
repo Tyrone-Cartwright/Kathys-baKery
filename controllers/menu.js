@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('new.ejs');
+  res.render('menus/new.ejs');
 });
 
 // router.get('/seed', (req, res) => {
@@ -31,33 +31,35 @@ router.get('/new', (req, res) => {
 // });
 
 router.delete('/:id', (req, res) => {
-  Menu.findByIdAndRemove(req.params.id, (err, menu) => {
+  Menu.findByIdAndRemove(req.params.id, { new: true }, (err, menu) => {
     res.redirect('/');
   });
 });
 
 router.put('/:id', (req, res) => {
   Menu.findByIdAndUpdate(req.params.id, req.body, (err, menu) => {
-    res.render('/');
+    res.redirect(`/menu/${req.params.id}`);
   });
 });
 
 // Create page
 router.post('/', (req, res) => {
   Menu.create(req.body, (error, menu) => {
-    res.render('index.ejs', { menu });
+    res.redirect('/menu');
+    // res.render('menus/index.ejs', { menu });
   });
 });
 
 router.get('/:id/edit', (req, res) => {
-  Menu.findById(req.params.id, (err, menu) => {
-    res.render('edit.ejs', { menu });
+  Menu.findById(req.params.id, (error, menu) => {
+    res.render('menus/edit.ejs', { menu });
   });
 });
 
 // Show page
 router.get('/:id', (req, res) => {
   Menu.findById(req.params.id, (error, menu) => {
+    console.log(menu);
     res.render('menus/show.ejs', { menu });
   });
 });

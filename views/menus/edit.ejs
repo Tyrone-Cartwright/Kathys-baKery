@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <body>
+    <h1>Edit Menu Item</h1>
+    <div class="container">
+      <form action="/menu/<%=menu._id%>?_method=PUT" method="POST">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="<%= menu.name %>"
+        /><br />
+        <label for="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          value="<%= menu.description %>"
+        /><br />
+        <label for="image">Image</label>
+        <input
+          type="url"
+          name="image"
+          id="image"
+          value="<%= menu.img %>"
+        /><br />
+        <label for="price">Price</label>
+        <input
+          type="number"
+          name="price"
+          id="price"
+          value="<%= menu.price %>"
+        /><br />
+        <label for="qty">Quantity</label>
+        <input
+          type="number"
+          name="qty"
+          id="qty"
+          value="<%= menu.qty %>"
+        /><br />
+        <label for="preparedBy">Prepared By</label>
+        <input
+          type="text"
+          name="preparedBy"
+          id="preparedBy"
+          value="<%= menu.preparedBy %>"
+        /><br />
+        <input type="submit" value="Submit Changes" />
+      </form>
+    </div>
+  </body>
+</html>
