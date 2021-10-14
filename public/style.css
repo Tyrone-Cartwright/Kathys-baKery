@@ -21,7 +21,6 @@ header {
   height: 80px;
   background-color: hsl(229, 29%, 29%);
   color: #fff;
-  position: fixed;
 }
 
 .nav-menu ul {
@@ -240,4 +239,11 @@ form .new-menu-details .input-box {
 .new-menu-details .input-box input:focus,
 .new-menu-details .input-box input:valid {
   border-color: hsl(229, 29%, 29%);
+}
+
+.new-bg {
+  background: url('https://img.freepik.com/free-photo/elevated-view-breads-utensils-egg-spices-forming-frame-black-background_23-2147955228.jpg?size=626&ext=jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
