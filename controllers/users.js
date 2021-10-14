@@ -68,12 +68,12 @@ router.post('/', (req, res) => {
     email: req.body.email,
     address: req.body.address,
     phone: req.body.phone,
-    employee_id: Number(req.body.employee_id),
-    hrsWorked: Number(req.body.hrsWorked),
-    salary: Number(req.body.salary),
+    employee_id: Number(req.body.employee_id || 0),
+    hrsWorked: Number(req.body.hrsWorked || 0),
+    salary: Number(req.body.salary || 0),
   };
   User.create(user, (error, user) => {
-    console.log(user);
+    console.log(error, user);
     res.render('users/show.ejs', { user });
   });
 });
