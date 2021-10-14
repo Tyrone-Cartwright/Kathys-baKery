@@ -13,7 +13,7 @@
           <li><a href="/menu">Menu</a></li>
           <% if(!isAuthenticated) { %>
           <li><a href="/login">Login</a></li>
-          <% } else { %>
+          <% } else { %> <% isAuthenticated = true; %>
           <li><a href="/logout">Logout</a></li>
           <% } %>
         </ul>

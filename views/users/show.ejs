@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <h2>Users List</h2>
+    <div class="container">
+      <div class="user-profile">
+        <h3><%= user.name %></h3>
+        <p><%= user.email %></p>
+        <p>$<%= user.address %></p>
+        <p><%= user.phone %></p>
+      </div>
+    </div>
+    <a href="/user/<%= user._id %>/edit">Edit <%= user.name %></a>
+    <a href="/user">User</a>
+  </body>
+</html>

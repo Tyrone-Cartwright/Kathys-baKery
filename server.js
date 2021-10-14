@@ -33,6 +33,13 @@ const config = {
   baseURL: process.env.BASE_URL,
   clientID: process.env.CLIENT_ID,
   issuerBaseURL: process.env.ISSUER,
+  routes: {
+    // Override the default login route to use your own login route as shown below
+    login: false,
+    // Pass a custom path to redirect users to a different
+    // path after logout.
+    postLogoutRedirect: '/logout',
+  },
 };
 
 // Mount Middleware
@@ -50,8 +57,12 @@ app.use(express.static('public'));
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
+app.get('/login', (req, res) => res.oidc.login({ returnTo: '/user' }));
+
+app.get('/logout', (req, res) => res.oidc.logout({ returnTo: '/user' }));
 // Mount Routes
-app.use('/', usersControllers);
+
+app.use('/user', usersControllers);
 app.use('/menu', menuControllers);
 
 // App Listener

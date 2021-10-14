@@ -4,6 +4,7 @@
     <%- include('../partials/head.ejs') %>
   </head>
   <body>
+    <header><%- include('../partials/header.ejs') %></header>
     <h1>Edit Menu Item</h1>
     <div class="container">
       <form action="/menu/<%=menu._id%>?_method=PUT" method="POST">
@@ -21,13 +22,8 @@
           id="description"
           value="<%= menu.description %>"
         /><br />
-        <label for="image">Image</label>
-        <input
-          type="url"
-          name="image"
-          id="image"
-          value="<%= menu.img %>"
-        /><br />
+        <label for="img">Image</label>
+        <input type="url" name="img" id="img" value="<%= menu.img %>" /><br />
         <label for="price">Price</label>
         <input
           type="number"

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <body>
+    <header><%- include('../partials/header.ejs') %></header>
+    <main>
+      <h2>User Profile List</h2>
+      <div class="container">
+        <% for(let i = 0; i < user.length; i++) { %>
+        <div class="menu-card">
+          <h3><%= user[i].name %></h3>
+          <p><%= user[i].email %></p>
+          <p>$<%= user[i].address %></p>
+          <p><%= user[i].phone %></p>
+          <a href="/user/<%= user[i]._id%>"><%= user[i].name%></a>
+        </div>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>

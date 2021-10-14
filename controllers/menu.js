@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Menu = require('../models/menu');
 const menuSeed = require('../data/menuSeed');
+const User = require('../models/user');
 
 router.get('/seed', (req, res) => {
   Menu.deleteMany({}, (err, menu) => {});
@@ -32,7 +33,7 @@ router.get('/new', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Menu.findByIdAndRemove(req.params.id, { new: true }, (err, menu) => {
-    res.redirect('/');
+    res.redirect('/menu');
   });
 });
 
@@ -40,6 +41,21 @@ router.put('/:id', (req, res) => {
   Menu.findByIdAndUpdate(req.params.id, req.body, (err, menu) => {
     res.redirect(`/menu/${req.params.id}`);
   });
+});
+
+router.put('/:id/buy', (req, res) => {
+  Menu.findByIdAndUpdate(
+    req.params.id,
+    { $inc: { qty: -1 } },
+    (error, menu) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(menu.qty);
+        res.redirect(`/menu`);
+      }
+    }
+  );
 });
 
 // Create page

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+}
+
 .logo img {
   width: 60px;
   height: 60px;
@@ -99,6 +103,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   border: 1px solid hsl(229, 29%, 29%);
+  gap: 10px;
 }
 
 /* Home Page */

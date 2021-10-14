@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <body>
+    <header><%- include('../partials/header.ejs') %></header>
+    <h1>Edit User Profile</h1>
+    <div class="container">
+      <form action="/user" method="POST">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          required
+        /><br />
+        <label for="password">Password</label>
+        <input
+          type="text"
+          name="password"
+          id="description"
+          placeholder="password"
+          required
+        /><br />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        /><br />
+        <label for="address">Address</label>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          placeholder="address"
+          required
+        /><br />
+        <label for="phone">Phone</label>
+        <input
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="phone"
+          required
+        /><br />
+        <label for="employee_id">Employee ID</label>
+        <input
+          type="number"
+          name="employee_id"
+          id="employee_id"
+          placeholder="Employee ID"
+          required
+        /><br />
+        <label for="hrsworked">Hours Worked</label>
+        <input
+          type="number"
+          name="hrdworked"
+          id="hrsworked"
+          placeholder="Hours Worked"
+          required
+        /><br />
+        <label for="salary">Salary</label>
+        <input
+          type="number"
+          name="salary"
+          id="salary"
+          placeholder="Salary"
+          required
+        /><br />
+        <input type="submit" value="Update Profile" />
+      </form>
+    </div>
+  </body>
+</html>
