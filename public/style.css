@@ -21,6 +21,7 @@ header {
   height: 80px;
   background-color: hsl(229, 29%, 29%);
   color: #fff;
+  position: fixed;
 }
 
 .nav-menu ul {
@@ -99,6 +100,7 @@ header {
   margin: auto;
 }
 
+/* Menu Page*/
 .menu-card {
   display: grid;
   grid-template-columns: 1fr;
@@ -123,4 +125,119 @@ header {
 .menu-items img {
   width: 200px;
   height: 200px;
+}
+
+/* Edit form */
+.edit-body,
+.new-menu-body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* max-width: 1440px; */
+}
+
+.bg-img {
+  background: url('https://t3.ftcdn.net/jpg/02/24/09/10/360_F_224091066_qKNy0xfbmRIUEKRO0xDr8LB3a7hJekfK.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.edit-container,
+.new-container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.edit-container .edit-title,
+.new-container .new-title {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.edit-container .edit-title::before,
+.new-container .new-title::before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: hsl(229, 29%, 29%);
+}
+
+.edit-container form .menu-details,
+.new-container form .new-menu-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .menu-details .input-box,
+form .new-menu-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.menu-details .input-box .details,
+.new-menu-details .input-box .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.menu-details .input-box input,
+.new-menu-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-details .input-box input:focus,
+.menu-details .input-box input:valid {
+  border-color: hsl(229, 29%, 29%);
+}
+
+.edit-menu .button,
+.new-menu .button {
+  width: 200px;
+  height: 45px;
+  margin: 45px 0;
+}
+
+.edit-menu .button input,
+.new-menu .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #30778d, #353c5f);
+}
+
+.edit-menu .button input:hover,
+.new-menu .button input:hover {
+  background: linear-gradient(-135deg, #30778d, #353c5f);
+}
+
+/* New */
+.new-menu-details .input-box input:focus,
+.new-menu-details .input-box input:valid {
+  border-color: hsl(229, 29%, 29%);
 }

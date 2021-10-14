@@ -73,7 +73,7 @@ router.post('/', (req, res) => {
     salary: Number(req.body.salary),
   };
   User.create(user, (error, user) => {
-    // console.log(newUser);
+    console.log(user);
     res.render('users/show.ejs', { user });
   });
 });

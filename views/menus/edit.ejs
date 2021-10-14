@@ -3,49 +3,58 @@
   <head>
     <%- include('../partials/head.ejs') %>
   </head>
-  <body>
-    <header><%- include('../partials/header.ejs') %></header>
-    <h1>Edit Menu Item</h1>
-    <div class="container">
-      <form action="/menu/<%=menu._id%>?_method=PUT" method="POST">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value="<%= menu.name %>"
-        /><br />
-        <label for="description">Description</label>
-        <input
-          type="text"
-          name="description"
-          id="description"
-          value="<%= menu.description %>"
-        /><br />
-        <label for="img">Image</label>
-        <input type="url" name="img" id="img" value="<%= menu.img %>" /><br />
-        <label for="price">Price</label>
-        <input
-          type="number"
-          name="price"
-          id="price"
-          value="<%= menu.price %>"
-        /><br />
-        <label for="qty">Quantity</label>
-        <input
-          type="number"
-          name="qty"
-          id="qty"
-          value="<%= menu.qty %>"
-        /><br />
-        <label for="preparedBy">Prepared By</label>
-        <input
-          type="text"
-          name="preparedBy"
-          id="preparedBy"
-          value="<%= menu.preparedBy %>"
-        /><br />
-        <input type="submit" value="Submit Changes" />
+  <body class="edit-body bg-img">
+    <div class="edit-container">
+      <div class="edit-title">Edit Menu Item</div>
+      <form
+        class="edit-menu"
+        action="/menu/<%=menu._id%>?_method=PUT"
+        method="POST"
+      >
+        <div class="menu-details">
+          <div class="input-box">
+            <label class="details" for="name">Name</label>
+            <input type="text" name="name" id="name" value="<%= menu.name %>" />
+          </div>
+          <div class="input-box">
+            <label class="details" for="description">Description</label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              value="<%= menu.description %>"
+            />
+          </div>
+          <div class="input-box">
+            <label class="details" for="img">Image</label>
+            <input type="url" name="img" id="img" value="<%= menu.img %>" />
+          </div>
+          <div class="input-box">
+            <label class="details" for="price">Price</label>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              value="<%= menu.price %>"
+            />
+          </div>
+          <div class="input-box">
+            <label class="details" for="qty">Quantity</label>
+            <input type="number" name="qty" id="qty" value="<%= menu.qty %>" />
+          </div>
+          <div class="input-box">
+            <label class="details" for="preparedBy">Prepared By</label>
+            <input
+              type="text"
+              name="preparedBy"
+              id="preparedBy"
+              value="<%= menu.preparedBy %>"
+            />
+          </div>
+          <div class="button">
+            <input type="submit" value="Submit Changes" />
+          </div>
+        </div>
       </form>
     </div>
   </body>
