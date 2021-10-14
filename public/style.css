@@ -119,6 +119,10 @@ header {
   color: hsl(0, 0%, 100%);
 }
 
+.welcome p {
+  font-size: 24px;
+}
+
 /* Show Page Styling */
 
 .menu-items img {
@@ -235,6 +239,12 @@ form .new-menu-details .input-box {
   background: linear-gradient(-135deg, #30778d, #353c5f);
 }
 
+.edit-menu ion-icon {
+  font-size: 32px;
+  color: hsl(229, 29%, 29%);
+  margin-top: 25px;
+}
+
 /* New */
 .new-menu-details .input-box input:focus,
 .new-menu-details .input-box input:valid {
@@ -246,4 +256,9 @@ form .new-menu-details .input-box {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+ion-icon {
+  font-size: 32px;
+  color: hsl(229, 29%, 29%);
 }
