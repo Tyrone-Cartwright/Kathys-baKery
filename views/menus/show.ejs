@@ -12,6 +12,14 @@
         <p><%= menu.description %></p>
         <p>$<%= menu.price %></p>
         <p><%= menu.qty %></p>
+        <% if(menu.qty > 0) { %> <%= menu.qty %> <% } else { %> Out Of Stock <%
+        } %>
+        <!-- Buy Button  -->
+        <!-- <% if(menu.qty > 0) { %> -->
+        <form action="/menu/<%= menu._id %>/buy?_method=PUT" method="POST">
+          <input class="buy" type="submit" value="Buy" />
+        </form>
+        <% } %>
         <p><%= menu.preparedBy %></p>
       </div>
     </div>

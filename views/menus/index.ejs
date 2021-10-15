@@ -17,7 +17,7 @@
           <p><%= menu[i].qty %></p>
           <p><%= menu[i].preparedBy %></p>
           <a href="/menu/<%= menu[i]._id%>"><%= menu[i].name%></a>
-          <button class="buy">Add to Cart</button>
+          <div><button class="buy">Buy</button></div>
           <form action="/menu/<%= menu[i]._id%>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE" />
           </form>
