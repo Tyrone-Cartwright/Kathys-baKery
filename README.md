@@ -8,25 +8,37 @@
 
 - ### Cascading Style Sheet(CSS)
 
+- ### Javascript
+
+- ### Express
+
+- ### NodeJS
+
 - ### MONGODB
+
+### Mongoose
 
 ## Screenshots
 
 ### Homepage
 
-## <img src='./public/assets/bakers-home.png'>
+## <img src='./public/assets/bakers-home.png' width='500'>
 
-### Menu Show Page
+### Menu Index Page
+
+## <img src='./public/assets/menu-index.png' width='500'>
 
 ### New Item Page
 
-<img src='./public/assets/new-bakery.png'>
+<img src='./public/assets/new-bakery.png' width='500'>
 
 ### Edit Show Page
 
+## <img src='./public/assets/menu-edit.png' width='500'>
+
 ### Edit Item Page
 
-## <img src='./public/assets/edit-bakery.png'>
+## <img src='./public/assets/edit-bakery.png' width='500'>
 
 [Click here](https://kathys-bakery.herokuapp.com/user) to see deployed project
 

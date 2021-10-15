@@ -108,8 +108,15 @@ header {
 .menu-card {
   text-align: center;
   width: 30%;
-  border: 1px solid hsl(229, 29%, 29%);
-  margin: 5px;
+  margin: 5px auto;
+  border-radius: 5px;
+  box-shadow: -4px 5px 15px -2px rgba(17, 30, 143, 0.75);
+  -webkit-box-shadow: -4px 5px 15px -2px rgba(17, 30, 143, 0.75);
+  -moz-box-shadow: -4px 5px 15px -2px rgba(17, 30, 143, 0.75);
+}
+
+.menu-card h3 {
+  margin-bottom: 5px;
 }
 
 .menu-card img {
@@ -146,9 +153,26 @@ header {
   height: 200px;
 }
 
+.show-container .menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.menu-items img {
+  width: 500px;
+  height: 340px;
+}
+
+.show-nav {
+  margin: 0 auto;
+}
+
 /* Edit form */
 .edit-body,
-.new-menu-body {
+.new-menu-body,
+.user-new {
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -166,7 +190,8 @@ header {
 }
 
 .edit-container,
-.new-container {
+.new-container,
+.user-container {
   max-width: 700px;
   width: 100%;
   background: #fff;
@@ -175,14 +200,17 @@ header {
 }
 
 .edit-container .edit-title,
-.new-container .new-title {
+.new-container .new-title,
+.user-container .user-title,
+.show-container .show-title {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 30px;
 }
 
 .edit-container .edit-title::before,
-.new-container .new-title::before {
+.new-container .new-title::before,
+.user-container .user-title::before {
   content: '';
   position: absolute;
   height: 3px;
@@ -191,7 +219,8 @@ header {
 }
 
 .edit-container form .menu-details,
-.new-container form .new-menu-details {
+.new-container form .new-menu-details,
+.user-container form .new-user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -199,20 +228,23 @@ header {
 }
 
 form .menu-details .input-box,
-form .new-menu-details .input-box {
+form .new-menu-details .input-box,
+form .new-user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
 
 .menu-details .input-box .details,
-.new-menu-details .input-box .details {
+.new-menu-details .input-box .details,
+.new-user-details .input-box .details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
 
 .menu-details .input-box input,
-.new-menu-details .input-box input {
+.new-menu-details .input-box input,
+.new-user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -230,14 +262,16 @@ form .new-menu-details .input-box {
 }
 
 .edit-menu .button,
-.new-menu .button {
+.new-menu .button,
+.new-user-form .button {
   width: 200px;
   height: 45px;
   margin: 45px 0;
 }
 
 .edit-menu .button input,
-.new-menu .button input {
+.new-menu .button input,
+.new-user-form .button input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -251,11 +285,13 @@ form .new-menu-details .input-box {
 }
 
 .edit-menu .button input:hover,
-.new-menu .button input:hover {
+.new-menu .button input:hover,
+.new-user-form .button input:hover {
   background: linear-gradient(-135deg, #30778d, #353c5f);
 }
 
-.edit-menu ion-icon {
+.edit-menu ion-icon,
+.new-user-form ion-icon {
   font-size: 32px;
   color: hsl(229, 29%, 29%);
   margin-top: 25px;
@@ -277,4 +313,18 @@ form .new-menu-details .input-box {
 ion-icon {
   font-size: 32px;
   color: hsl(229, 29%, 29%);
+}
+
+/* User New Page */
+
+.user-bg {
+  background: url('https://cdnimg.webstaurantstore.com/uploads/buying_guide/2015/2/bakery-equip-article-1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.new-user-details .input-box input:focus,
+.new-user-details .input-box input:valid {
+  border-color: hsl(229, 29%, 29%);
 }

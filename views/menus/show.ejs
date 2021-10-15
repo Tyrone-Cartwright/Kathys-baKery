@@ -3,11 +3,11 @@
   <head>
     <%- include('../partials/head.ejs') %>
   </head>
-  <body>
+  <body class="show-body">
     <header><%- include('../partials/header.ejs') %></header>
-    <div class="container">
+    <div class="show-container">
       <div class="menu-items">
-        <h3><%= menu.name %></h3>
+        <h3 class="show-title"><%= menu.name %></h3>
         <img src="<%= menu.img %> " />
         <p><%= menu.description %></p>
         <p>$<%= menu.price %></p>
@@ -15,7 +15,13 @@
         <p><%= menu.preparedBy %></p>
       </div>
     </div>
-    <a href="/menu/<%= menu._id %>/edit">Edit <%= menu.name %></a>
-    <a href="/menu">Menu</a>
+    <div class="show-nav">
+      <div class="show-link">
+        <a href="/menu/<%= menu._id %>/edit">Edit <%= menu.name %></a>
+      </div>
+      <div class="show-back-menu">
+        <a href="/menu">Menu</a>
+      </div>
+    </div>
   </body>
 </html>
