@@ -10,6 +10,8 @@
 
 - ### Javascript
 
+- ### Google Fonts
+
 - ### Express
 
 - ### NodeJS
